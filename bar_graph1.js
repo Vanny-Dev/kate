@@ -1,20 +1,23 @@
 const ctx1 = document.getElementById("barGraph1").getContext('2d');
+const longLabels = [
+    'Administrative Division', 
+    'Claims Division', 
+    'Field Service Extension Offices', 
+    'Finance Division', 
+    'Legal Affairs Division',
+    'Management Information Division',
+    'Offices of the Administrator',
+    'Planning and Management Division',
+    'Veterans Affairs Management Division',
+    'Veterans Memorial Historical Division',
+    'Veterans Records Management Division'    
+];
+
+const labelsAdjusted = longLabels.map(label => label.split(' '))
 const barGraph1 = new Chart(ctx1, {
     type: 'bar',
     data: {
-        labels: [
-            'Administrative Division', 
-            'Claims Division', 
-            'Field Service Extension Offices', 
-            'Finance Division', 
-            'Legal Affairs Division',
-            'Management Information Division',
-            'Offices of the Administrator',
-            'Planning and Management Division',
-            'Veterans Affairs Management Division',
-            'Veterans Memorial Historical Division',
-            'Veterans Records Management Division'    
-        ],
+        labels: labelsAdjusted,
         datasets: [{
             label: 'Authorized Plantilla Positions',
             data: [47, 58, 90, 48, 11, 12, 14, 14, 10, 45, 16],
@@ -87,7 +90,15 @@ const barGraph1 = new Chart(ctx1, {
         }]
     },
     options: {
+        maintainAspectRatio: false,
         plugins: {
+            tooltip: {
+                callbacks: {
+                    title: (context) => {
+                        return context[0].label.replaceAll(',', ' ');
+                    }
+                }
+            },
             title: {
                 display: true,
                 text: 'Fill-Up',
@@ -113,14 +124,19 @@ const barGraph1 = new Chart(ctx1, {
             x: {
                 title: {
                     display: true,
-                    text: 'Office / Unit', // Title text for x-axis labels
+                    text: 'Office/Unit', // Title text for x-axis labels
                     color: 'white', // Title color
                     font: {
                         size: 18
-                    }
+                    },
                 },
                 ticks: {
-                    color: 'white' // Y-axis labels color
+                    font: {
+                        size: 11
+                    },
+                    color: 'white', // X-axis labels color
+                    maxRotation: 0, // Set rotation angle to 0
+                    autoSkip: true, // Disable auto skipping of labels
                 }
             }
         }
