@@ -3,17 +3,17 @@ const ctx2 = document.getElementById('barGraph2').getContext('2d');
     type: 'bar',
     data: {
         labels: [
-            'Administrative Division', 
-            'Claims Division', 
-            'Field Service Extension Offices', 
-            'Finance Division', 
-            'Legal Affairs Division',
-            'Management Information Division',
-            'Offices of the Administrator',
-            'Planning and Management Division',
-            'Veterans Affairs Management Division',
-            'Veterans Memorial Historical Division',
-            'Veterans Records Management Division'    
+            ['Administrative', 'Division'], 
+            ['Claims Division', 'Extension Offices'],
+            ['Field', 'Service'],
+            ['Finance', 'Division'],
+            ['Legal Affairs' , 'Division'],
+            ['Management', 'Information' ,'Division'],
+            ['Offices of the', 'Administrator'],
+            ['Planning and', 'Management' ,'Division'],
+            ['Veterans Affairs' ,'Management Division'],
+            ['Veterans Memorial' ,'Historical Division'],
+            ['Veterans Records' ,'Management Division'], 
         ],
         datasets: [{
             label: '',
@@ -40,7 +40,15 @@ const ctx2 = document.getElementById('barGraph2').getContext('2d');
         },
     ]},
     options: {
+        maintainAspectRatio: false,
         plugins: {
+            tooltip: {
+                callbacks: {
+                    title: (context) => {
+                        return context[0].label.replaceAll(',', ' ');
+                    }
+                }
+            },
             title: {
                 display: true,
                 text: 'Fill-Up Rate',
@@ -57,21 +65,25 @@ const ctx2 = document.getElementById('barGraph2').getContext('2d');
                 max: 100,
                 ticks: {
                     callback: (value) => `${value}%`,
-                    color: 'white' // Y-axis labels color
-                }
+                    color: 'white', // Y-axis labels color
+
+                },
+                
             },
             y: {
                 title: {
                     display: true,
-                    text: 'Office / Unit', // Title text for x-axis labels
+                    text: 'Office/Unit', // Title text for x-axis labels
                     color: 'white', // Title color
                     font: {
                         size: 18
                     }
                 },
                 ticks: {
+                    autoSkip: false,
                     color: 'white' // Y-axis labels color
-                }
+                },
+                
             },
         }
     }
