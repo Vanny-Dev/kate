@@ -22,43 +22,98 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    gap: 5rem;
+    gap: 100px;
     justify-content: center;
     align-items: center;
     padding: 3rem 0;
 }
 
 .graph {
-    width: 45vw;
-    height: auto;
+    position: relative;
+    width: 1000px;
+    height: 700px;
     padding: 2rem;
     border: 1px solid #fff;
     border-radius: 1rem;
     background: #251c35;
     box-shadow: 0 0 16px #fff;
-    display: block;
+    overflow: hidden;
 }
 
-@media (max-width: 1366px) {
+.flex-box {
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: .2;
+}
+
+.small-graph {
+    width: 300px;
+    height: 200px;
+    padding: 2rem;
+    
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p {
+    font-size: 15px;
+}
+
+
+@media only screen and (max-width: 1080px) {
     .container {
         gap: 100px;
         flex-direction: column;
     }
 
     .graph {
-        width: 65vw; 
+        width: 93%; 
+        height: 700px;
         padding: 1.5rem; 
+    }
+
+    p {
+        font-size: 13px;
     }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .container {
         flex-direction: column; 
-        gap: 50px; 
+        gap: 100px; 
     }
 
     .graph {
-        width: 60vw;
+        width: 93%;
+        height: 650px;
         padding: 1rem; 
     }
+
+    p {
+        font-size: 11px;
+    }
 }
+
+/* @media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column; 
+        gap: 100px; 
+    }
+
+    .graph {
+        width: 93%;
+        height: 600px;
+        padding: 1rem; 
+    }
+} */
