@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Number of Employees</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 style="text-align: center;">Number of Employees as of<br>March 18, 2024</h1>
+
+        <div class="graph" data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine">
+            <canvas id="barGraph1" width="400" height="400"></canvas>
+        </div>
+        <div class="flex-box">
+            <p id="authPP" data-aos="fade-right"></p>
+            <p id="filledP" data-aos="fade-right"></p>
+            <p id="unfilledP" data-aos="fade-right"></p>
+        </div> 
+        <div class="graph" data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine">
+            <canvas id="barGraph2" width="400" height="400"></canvas>
+        </div>
+        <div class="flex-box">
+            <p id="tQuotient" data-aos="fade-left"></p>
+        </div> 
+        <div class="graph" data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine">
+            <canvas id="barGraph3" width="400" height="400"></canvas>
+        </div>
+        <div class="flex-box">
+            <p id="tCos" data-aos="fade-right"></p>
+        </div> 
+        <div class="graph" data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine">
+            <canvas id="barGraph4" width="400" height="400"></canvas>
+        </div>
+        <div class="flex-box">
+            <p id="fillupRate" data-aos="fade-left"></p>
+        </div> 
+        <div class="graph"data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine">
+            <canvas id="barGraph5" width="400" height="400"></canvas>
+        </div>
+        <div class="flex-box">
+            <p id="totalAttrition"data-aos="fade-right"></p>
+        </div> 
+        <div class="graph" data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine">
+            <canvas id="barGraph6" width="400" height="400"></canvas>
+        </div>
+        <div class="flex-box">
+            <p id="totalCount" data-aos="fade-left"></p>
+        </div> 
+        <div class="wrapper">
+            <div class="chart" data-aos="zoom-out" data-aos-offset="400" data-aos-easing="ease-in-sine">
+                <canvas id="doughnutChart1" width="400" height="400"></canvas>
+            </div>
+            <div class="chart" data-aos="zoom-out" data-aos-offset="400" data-aos-easing="ease-in-sine">
+                <canvas id="doughnutChart2" width="400" height="400"></canvas>
+            </div>
+            <div class="chart" data-aos="zoom-out" data-aos-offset="400" data-aos-easing="ease-in-sine">
+                <canvas id="doughnutChart3" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+
+<script>AOS.init()</script>
+    
+<script type="module" src="./js/graph/bar_graph1.js"></script>
+<script type="module" src="./js/graph/bar_graph2.js"></script>
+<script type="module" src="./js/graph/bar_graph3.js"></script>
+<script type="module" src="./js/graph/bar_graph4.js"></script>
+<script type="module" src="./js/graph/bar_graph5.js"></script>
+<script type="module" src="./js/graph/bar_graph6.js"></script>
+<script type="module" src="./js/chart/doughnut_chart1.js"></script>
+<script type="module" src="./js/chart/doughnut_chart2.js"></script>
+<script type="module" src="./js/chart/doughnut_chart3.js"></script>
+
+
+
+</body>
+</html>

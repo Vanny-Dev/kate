@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "types": ["chart.js"]
+  },
+  "include": [
+    "./js/**/*.js"
+  ]
+}
